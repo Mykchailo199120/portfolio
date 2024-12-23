@@ -1,0 +1,96 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.typewriter-effect {
+    font-family: 'Dancing Script', Courier, monospace;
+    font-size: 2.0rem;
+    color: gray;
+    white-space: pre-wrap; /* Дозволяє розрив рядків */
+
+    animation: blink 0.5s step-end infinite;
+    display: inline-block; /* Фіксована позиція без зсувів */
+    min-height: 4.5rem;
+}
+
+.line-spacing {
+    display: block;
+    padding-left: 0;    /* Перший рядок */
+    &:nth-child(2) {
+        padding-left: 40px; /* Другий рядок */
+    }
+    &:nth-child(3) {
+        padding-left: 80px; /* Третій рядок */
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: lightgray !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: lightgray !important;
+    opacity: 0.6; /* Необов'язково: можна додати напівпрозорість */
+}
+
+/* Колір для активної крапочки */
+.swiper-pagination-bullet-active {
+    background-color: lightgray !important;
+    opacity: 1;
+}
+
+.transition-opacity {
+    transition: opacity 2s ease-in-out;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+
+@font-face {
+    font-family: 'Allura' ;
+    src: url('./fonts/Allura-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Playfair Display";
+    src: url('./fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
