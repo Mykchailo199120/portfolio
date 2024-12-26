@@ -65,48 +65,51 @@ const MainPage: React.FC = () => {
 
 
     return (
-        <main>
-            <section className="flex justify-between items-center mt-40">
-                <div className="flex flex-col items-start space-y-6">
+        <main className="space-y-20">
+            <section className="flex flex-col-reverse md:flex-row justify-between items-center lg:mt-40">
+                <div className="flex flex-col items-start text-center lg:text-left space-y-6">
                     <h1
-                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-8xl font-semibold ml-40"
-                        style={{ lineHeight: "2" }}
+                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-4xl md:text-6xl md:right-[20px] lg:text-8xl font-semibold lg:ml-40 lg:mb-60"
+                        style={{ height: "150px", lineHeight: "2" }}
                     >
                         Dmitriy Mikheev
                     </h1>
                     <div
-                        className="ml-60  text-gray-700 h-full w-auto overflow-visible relative font-Allura text-6xl"
-                        style={{ height: "120px", lineHeight: "1.5" }}
+                        className="lg:ml-60 text-gray-700 h-auto w-full lg:w-auto overflow-visible relative font-Allura text-3xl sm:text-4xl lg:text-6xl lg:top-[-200px] md:mr-10"
+                        style={{ lineHeight: "1.5" }}
                         ref={typewriterRef1}
                     >
-                        <span className="block text-6xl leading-[3rem] mb-6"></span>
-                        <span className="line-spacing block text-6xl leading-[3rem] mb-6 ml-20"></span>
-                        <span className="line-spacing block text-6xl leading-[3rem] mb-6 ml-20"></span>
+                        <span className="block lg:text-6xl md:text-4xl leading-[3rem] mb-6"
+                              style={{ display: "block"}}></span>
+                        <span className="line-spacing block lg:text-6xl md:text-4xl leading-[3rem] mb-6 ml-20"
+                              style={{ display: "block" }}></span>
+                        <span className="line-spacing block lg:text-6xl md:text-4xl leading-[4rem] mb-6 ml-20"
+                              style={{ display: "block"}}></span>
                     </div>
                 </div>
-                <div className="w-1/4 flex">
+                <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center lg:justify-start">
                     <img
                         src="/images/IMG_1454.jpeg"
                         alt="Opera Singer"
-                        className="shadow-xl h-auto w-[410]  -translate-x-20 -mt-40 ml-20"
+                        className="shadow-xl max-w-full h-auto lg:w-[410] lg:-translate-x-20 lg:-mt-40 lg:ml-20"
                     />
                 </div>
             </section>
 
-            <section className="flex justify-between items-center py-16 px-8 mt-40">
-                <div className="w-1/4">
+            <section className="flex flex-col lg:flex-row justify-between items-center  space-y-12 lg:space-y-0 lg:space-x-12 py-16 px-8 mt-40">
+                <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center relative lg:justify-end">
                     <img
                         src="/images/IMG_1456.jpeg"
                         alt="Opera Performance"
-                        className="shadow-xl h-auto w-[410] -translate-x-20 ml-12"
+                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 ml-12"
                     />
                 </div>
-                <div className="flex flex-col items-start space-y-6 w-1/2 ml-20 mr-40 mb-80">
-                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed text-8xl font-bold mb-16">
+                <div className="flex flex-col relative items-start space-y-12 text-center lg:text-left w-1/2 ml-20 mr-40 lg:top-[-150px]">
+                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed text-4xl sm:text-6xl lg:text-8xl font-bold">
                         A great gift
                     </h1>
                     <div
-                        className="text-gray-700 h-auto w-full overflow-visible relative font-Allura text-5xl"
+                        className="text-gray-700 h-auto w-full overflow-visible relative font-Allura text:3xl sm:3xl lg:text-5xl"
                         style={{ height: "120px", lineHeight: "1.5" }}
                         ref={typewriterRef2}
                     >
@@ -114,16 +117,16 @@ const MainPage: React.FC = () => {
                     </div>
                 </div>
             </section>
-            <section className="flex justify-between items-center py-14 mt-40">
+            <section className="flex flex-col lg:flex-row justify-between items-center space-y-12 lg:space-y-0 lg:space-x-12 py-14 mt-40">
                 <div className="flex flex-col items-start space-y-6 mb-60">
                     <h1
-                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-8xl font-semibold ml-80"
+                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text:4xl sm:text-6xl lg:text-8xl font-semibold ml-80"
                         style={{ lineHeight: "2" }}
                     >
                         A bridge
                     </h1>
                     <div
-                        className="ml-60  text-gray-700 h-full w-auto overflow-visible relative font-Allura text-6xl"
+                        className="ml-60  text-gray-700 h-full w-auto overflow-visible relative font-Allura text:3xl sm:4xl lg:text-6xl"
                         style={{ height: "120px", lineHeight: "1.5" }}
                         ref={typewriterRef3}
                     >
@@ -133,11 +136,11 @@ const MainPage: React.FC = () => {
                         <span className="block text-6xl leading-[3rem] mb-6"></span>
                     </div>
                 </div>
-                <div className="w-1/4 flex">
+                <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center lg:justify-start">
                     <img
                         src="/images/IMG_1451.jpeg"
                         alt="Opera Singer"
-                        className="shadow-xl h-auto w-[410] -translate-x-20 -mt-16 ml-20"
+                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 -mt-1 ml-20"
                     />
                 </div>
             </section>

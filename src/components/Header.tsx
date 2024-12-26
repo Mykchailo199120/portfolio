@@ -41,6 +41,8 @@ const Header = () => {
                                className="text-2xl block text-gray-700 hover:text-gray-900">News</a>
                             <a href="#contacts"
                                className="text-2xl block text-gray-700 hover:text-gray-900">Contacts</a>
+                            <a href="#performance"
+                               className="text-2xl block text-gray-700 hover:text-gray-900">Performance schedule</a>
                         </div>
                     )}
                 </div>
