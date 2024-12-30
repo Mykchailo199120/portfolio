@@ -88,12 +88,7 @@ const Footer: React.FC = () => {
                                 placeholder="Enter your email"
                                 className="p-2 rounded-l-md bg-gray-800 border-none focus:ring-2 focus:ring-gray-700 focus:outline-none"
                             />
-                            <button
-                                type="submit"
-                                className="font-Allura text-white text-3xl p-2 bg-gray-500 rounded-r-md hover:bg-gray-500 transition-colors"
-                            >
-                                Subscribe
-                            </button>
+
                         </div>
                     </form>
                 </div>
