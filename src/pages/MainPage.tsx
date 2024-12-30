@@ -89,9 +89,9 @@ const MainPage: React.FC = () => {
                 </div>
                 <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center lg:justify-start">
                     <img
-                        src="/images/IMG_1454.jpeg"
+                        src="/images/img_201.jpeg"
                         alt="Opera Singer"
-                        className="shadow-xl max-w-full h-auto lg:w-[410] lg:-translate-x-20 lg:-mt-40 lg:ml-20"
+                        className="shadow-xl max-w-full h-auto lg:w-[410px] lg:-translate-x-20 lg:-mt-40 lg:ml-[98px] md:ml-10"
                     />
                 </div>
             </section>
@@ -101,7 +101,7 @@ const MainPage: React.FC = () => {
                     <img
                         src="/images/IMG_1456.jpeg"
                         alt="Opera Performance"
-                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 ml-12"
+                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20"
                     />
                 </div>
                 <div className="flex flex-col relative items-start space-y-12 text-center lg:text-left w-1/2 ml-20 mr-40 lg:top-[-150px]">
@@ -138,9 +138,9 @@ const MainPage: React.FC = () => {
                 </div>
                 <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center lg:justify-start">
                     <img
-                        src="/images/IMG_1451.jpeg"
+                        src="/images/img_202.jpeg"
                         alt="Opera Singer"
-                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 -mt-1 ml-20"
+                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 lg:ml-20"
                     />
                 </div>
             </section>
