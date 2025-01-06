@@ -41,16 +41,16 @@ const Sliders: React.FC = () => {
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 3000 }}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={2}
                     loop
-                    className="w-full h-[600px] object-cover rounded-lg shadow-m"
+                    className="w-full h-[560px]"
                 >
                     {photos.map((photo, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className="flex justify-center items-center h-full">
                             <img
                                 src={photo}
                                 alt={`Slide ${index + 1}`}
-                                className=""
+                                className="w-full h-full object-cover rounded-lg shadow-m"
                             />
                         </SwiperSlide>
                     ))}
@@ -61,7 +61,7 @@ const Sliders: React.FC = () => {
             <div className="py-12">
                 <h2 className="font-Allura text-5xl font-light text-center mb-6">Video</h2>
                 <Swiper
-                    modules={[Navigation, Pagination]}
+                    modules={[Navigation, Pagination, Autoplay]}
                     navigation
                     pagination={{ clickable: true }}
                     spaceBetween={20}

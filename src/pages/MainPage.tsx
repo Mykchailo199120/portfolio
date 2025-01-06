@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Sliders from "../components/Sliders.tsx";
 
 const MainPage: React.FC = () => {
     const typewriterRef1 = useRef(null); // Реф для першої секції
@@ -66,16 +67,16 @@ const MainPage: React.FC = () => {
 
     return (
         <main className="space-y-20">
-            <section className="flex flex-col-reverse md:flex-row justify-between items-center lg:mt-40">
+            <section className="flex flex-col-reverse md:flex-row justify-between items-center lg:mb-60">
                 <div className="flex flex-col items-start text-center lg:text-left space-y-6">
                     <h1
-                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-4xl md:text-5xl md:ml-10 lg:text-8xl font-semibold lg:ml-40 lg:mb-60"
+                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-4xl md:text-5xl md:ml-40 lg:text-8xl font-semibold"
                         style={{ height: "150px", lineHeight: "2" }}
                     >
                         Dmitriy Mikheev
                     </h1>
                     <div
-                        className="lg:ml-60 text-gray-700 h-auto w-full lg:w-auto overflow-visible relative font-Allura text-3xl sm:text-4xl lg:text-6xl lg:top-[-200px] md:mr-10"
+                        className="lg:ml-80 text-gray-700 h-auto w-full lg:w-auto overflow-visible relative font-Allura text-3xl sm:text-4xl lg:text-6xl  md:mr-10"
                         style={{ lineHeight: "1.5" }}
                         ref={typewriterRef1}
                     >
@@ -87,21 +88,21 @@ const MainPage: React.FC = () => {
                               style={{ display: "block"}}></span>
                     </div>
                 </div>
-                <div className="w-full lg:w-1/4 md:w-1/3 flex justify-center lg:justify-start">
+                <div className="w-full lg:w-auto md:w-auto flex justify-center lg:justify-start">
                     <img
-                        src="/images/img_201.jpeg"
+                        src="/images/img_11.png"
                         alt="Opera Singer"
-                        className="shadow-xl max-w-full h-auto lg:w-[410px] md:mr-[6px] lg:-translate-x-20 lg:-mt-40 lg:ml-[98px]"
+                        className="w-[200px] sm:w-[300px] lg:w-[400px] rounded-lg"
                     />
                 </div>
             </section>
 
-            <section className="flex flex-col md:flex-row lg:flex-row justify-between items-center  space-y-12 lg:space-y-0 lg:space-x-12 py-16 px-8 mt-40">
+            <section className="flex flex-col md:flex-row lg:flex-row justify-between items-center">
                 <div className="w-full lg:w-1/4 flex justify-center relative lg:justify-end">
                     <img
-                        src="/images/IMG_1456.jpeg"
+                        src="/images/img_2.png"
                         alt="Opera Performance"
-                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20"
+                        className=""
                     />
                 </div>
                 <div className="flex flex-col relative items-start space-y-12 text-center lg:text-left w-1/2 ml-20 mr-40 lg:top-[-150px]">
@@ -138,12 +139,13 @@ const MainPage: React.FC = () => {
                 </div>
                 <div className="w-full lg:w-1/4 flex justify-center lg:justify-start">
                     <img
-                        src="/images/img_203.jpeg"
+                        src="/images/img_3.png"
                         alt="Opera Singer"
-                        className="shadow-xl h-auto max-w-full lg:w-[410] -translate-x-20 lg:ml-20"
+                        className=""
                     />
                 </div>
             </section>
+            <Sliders />
         </main>
     );
 };

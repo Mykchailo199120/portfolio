@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
+import Router from "./components/Router";
 import Header from "./components/Header";
-import MainPage from "./pages/MainPage";
 import 'animate.css'
-import Sliders from "./components/Sliders.tsx";
 import Footer from "./components/Footer.tsx";
-
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
@@ -17,8 +16,8 @@ function App() {
         return () => clearTimeout(timer);
     }, []);
 
-
     return (
+        <BrowserRouter>
       <div
           className={`transition-opacity duration-2000 ${
               isLoaded ? "opacity-100" : "opacity-0"
@@ -26,12 +25,13 @@ function App() {
       >
           <Header/>
           <main>
-              <MainPage/>
-              <Sliders/>
+              <Router/>
           </main>
           <Footer/>
       </div>
-  )
+
+        </BrowserRouter>
+  );
 }
 
 export default App

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import {Link} from 'react-router-dom';
+
 
 const Header = () => {
     const [language, setLanguage] = useState('En');
@@ -33,16 +35,45 @@ const Header = () => {
                     </div>
                     {menuOpen && (
                         <div
-                            className="font-Allura absolute left-0 top-16 shadow-lg rounded-lg p-4 space-y-2 animate__animated animate__fadeIn">
-                            <a href="#biography"
-                               className=" text-2xl block text-gray-700 hover:text-gray-900">Biography</a>
-                            <a href="#gallery" className="text-2xl block text-gray-700 hover:text-gray-900">Gallery</a>
-                            <a href="#news"
-                               className="text-2xl block text-gray-700 hover:text-gray-900">News</a>
-                            <a href="#contacts"
-                               className="text-2xl block text-gray-700 hover:text-gray-900">Contacts</a>
-                            <a href="#performance"
-                               className="text-2xl block text-gray-700 hover:text-gray-900">Performance schedule</a>
+                            className="font-Allura absolute left-0 top-16 bg-gray-200 rounded-lg p-4 space-y-2 animate__animated animate__fadeIn">
+                            <Link to="/" className="text-2xl block text-gray-700 hover:text-gray-900">
+                                Home
+                            </Link>
+                            <Link
+                                to="/biography"
+                                className=" text-2xl block text-gray-700 hover:text-gray-900"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Biography
+                            </Link>
+                            <Link
+                                to="/gallery"
+                                className=" text-2xl block text-gray-700 hover:text-gray-900"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Gallery
+                            </Link>
+                            <Link
+                                to="/news"
+                                className=" text-2xl block text-gray-700 hover:text-gray-900"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                News
+                            </Link>
+                            <Link
+                                to="/contact"
+                                className=" text-2xl block text-gray-700 hover:text-gray-900"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Contacts
+                            </Link>
+                            <Link
+                                to="/performance"
+                                className=" text-2xl block text-gray-700 hover:text-gray-900"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Performance schedule
+                            </Link>
                         </div>
                     )}
                 </div>
@@ -67,7 +98,7 @@ const Header = () => {
                     </div>
 
                     {languageMenuOpen && (
-                        <div className="absolute right-0 mt-2 w-30 bg-white shadow-lg rounded-lg animate__animated animate__fadeIn">
+                        <div className="absolute right-0 mt-2 w-30 bg-gray-300 shadow-lg rounded-lg animate__animated animate__fadeIn">
                             <div
                                 className="font-Allura text-2xl px-2 py-2 hover:bg-gray-200"
                                 onClick={() => handleLanguageChange('En')}
