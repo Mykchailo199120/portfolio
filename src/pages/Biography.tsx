@@ -13,7 +13,7 @@ const Biography: React.FC = () => {
 
             {isMainBiographyPage && (
                 <>
-                    <h2 className="text-5xl font-Allura mb-4">Dmitriy Mikheev</h2>
+                    <h2 className="text-5xl font-Allura font-semibold mb-4">Dmitriy Mikheev</h2>
                     <div className="w-60 h-0.5 bg-gray-700 mb-4"></div>
                     <p className="text-4xl font-Allura text-center">
                         Is an outstanding contemporary opera singer

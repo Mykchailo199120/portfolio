@@ -3,8 +3,8 @@ import React from 'react';
 
 const Page3: React.FC = () => (
     <div>
-        <h2 className="text-5xl md:text-5xl font-Allura mb-4">Career and International Acclaim</h2>
-        <div className="w-60 h-0.5 bg-gray-700 mb-4"></div>
+        <h2 className="text-5xl md:text-5xl font-Allura font-semibold mb-4">Career and International Acclaim</h2>
+        <div className="w-60 mx-auto h-0.5 bg-gray-700 mb-4"></div>
         <p className="text-center text-4xl md:text-2xl font-Allura mb-4">
             After graduating from the academy, Dmitriy quickly gained recognition, not only on the Ukrainian stage but
             also far beyond its borders. His exceptional skill allowed him to perform at the
@@ -35,7 +35,7 @@ const Page3: React.FC = () => (
             and
             heroism.
         </p>
-        <div className="w-60 h-0.5 bg-gray-700 mb-4"></div>
+        <div className="w-60 mx-auto h-0.5 bg-gray-700 mb-4"></div>
     </div>
 );
 

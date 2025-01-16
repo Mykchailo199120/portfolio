@@ -1,11 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-// @ts-ignore
+
 import "swiper/css";
-// @ts-ignore
+
 import "swiper/css/navigation";
-// @ts-ignore
+
 import "swiper/css/pagination";
 
 // Масив фото
@@ -18,8 +18,7 @@ const photos = [
     "/images/25D48A95-BB90-479E-9133-2302AB3F2468.JPG",
     "/images/F8AE9798-3118-4004-A208-C483323C2F12.JPG",
     "/images/3B6EEA21-F787-4B56-AB3A-79602D406B55.JPG",
-    "/images/9B616D42-F463-4506-A74E-014B631F2DBE.JPG",
-    "/images/9B616D42-F463-4506-A74E-014B631F2DBE.JPG",
+
 ];
 
 // Масив YouTube посилань
@@ -30,8 +29,10 @@ const videos = [
 ];
 
 const Sliders: React.FC = () => {
+
     return (
-        <section className="min-h-screen">
+        <section
+            className="min-h-screen">
             {/* Слайдер із фото */}
             <div className="py-12">
                 <h2 className="font-Allura text-6xl font-light text-center mb-6">Photo</h2>

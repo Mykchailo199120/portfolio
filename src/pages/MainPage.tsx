@@ -2,150 +2,171 @@ import React, { useEffect, useRef } from "react";
 import Sliders from "../components/Sliders.tsx";
 
 const MainPage: React.FC = () => {
-    const typewriterRef1 = useRef(null); // Реф для першої секції
-    const typewriterRef2 = useRef(null); // Реф для другої секції
-    const typewriterRef3 = useRef(null); // Реф для третьої секції
-    const hasAnimated = useRef(false); // Прапорець для відслідковування анімації
-
+    const sectionsRefs = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
-        if (hasAnimated.current) return; // Уникаємо повторної анімації
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate-fadeIn");
+                    }
+                });
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+
+        sectionsRefs.current.forEach((section) => observer.observe(section));
+
+        return () => {
+            sectionsRefs.current.forEach((section) => observer.unobserve(section));
+        }
+    }, []);
+
+    const typewriterRef1 = useRef<HTMLDivElement | null>(null);
+    const typewriterRef2 = useRef<HTMLDivElement | null>(null);
+    const typewriterRef3 = useRef<HTMLDivElement | null>(null);
+    const hasAnimated = useRef(false);
+
+    useEffect(() => {
+        if (hasAnimated.current) return;
         hasAnimated.current = true;
 
         const animateTyping = (
-            ref: React.RefObject<HTMLDivElement | null>,
+            ref: React.RefObject<HTMLDivElement>,
             textLines: string[]
         ) => {
             if (!ref.current) return;
 
-            const speed = 50; // Швидкість друкування
+            const speed = 50;
             let lineIndex = 0;
             let charIndex = 0;
 
             const typeCharacter = () => {
                 const children = ref.current?.children;
 
-                if (!children) return; // Перевірка чи існують діти
+                if (!children || lineIndex >= textLines.length) return;
+                const currentLine = textLines[lineIndex];
+                const lineSpan = children[lineIndex] as HTMLSpanElement;
 
-                if (lineIndex < textLines.length && lineIndex < children.length) {
-                    const currentLine = textLines[lineIndex];
-                    const lineSpan = children[lineIndex] as HTMLSpanElement;
-
-                    if (!lineSpan) return;
-
-                    if (charIndex < currentLine.length) {
-                        lineSpan.innerHTML += currentLine[charIndex]; // Додаємо символ
-                        charIndex++;
-                        setTimeout(typeCharacter, speed);
-                    } else {
-                        charIndex = 0;
-                        lineIndex++;
-                        setTimeout(typeCharacter, speed * 5); // Затримка між рядками
-                    }
+                if (lineSpan && charIndex < currentLine.length) {
+                    lineSpan.innerHTML += currentLine[charIndex];
+                    charIndex++;
+                    setTimeout(typeCharacter, speed);
+                } else if (lineSpan) {
+                    charIndex = 0;
+                    lineIndex++;
+                    setTimeout(typeCharacter, speed * 5);
                 }
             };
+
+            textLines.forEach(() => {
+                if (ref.current && ref.current.children.length < textLines.length) {
+                    const span = document.createElement("span");
+                    span.className = "block leading-[3rem] mb-6";
+                    ref.current.appendChild(span);
+                }
+            });
 
             typeCharacter();
         };
 
         animateTyping(typewriterRef1, [
-            `"Art born from the depths of the soul,`,
-            `where every note is a story,`,
-            `and every sound is eternity."`,
+            "Art born from the depths of the soul,",
+            "where every note is a story,",
+            "and every sound is eternity.",
         ]);
         animateTyping(typewriterRef2, [
-            `"To inspire everyone who hears its sound. Through music, the deepest emotions are revealed, connecting hearts and showing that art is a language understood by all. Each of his performances becomes an unforgettable moment where music transforms into a source of inspiration, awakening love, hope, and a yearning for beauty in people."`,
+            "To inspire everyone who hears its sound. Through music, the deepest emotions are revealed, connecting hearts and showing that art is a language understood by all. Each of his performances becomes an unforgettable moment where music transforms into a source of inspiration, awakening love, hope, and a yearning for beauty in people.",
         ]);
         animateTyping(typewriterRef3, [
-            `"Between the soul and eternity,`,
-            `where every note becomes inspiration,`,
-            `a language of the heart that can inspire,`,
-            `and heal each of us."`,
+            "Between the soul and eternity,",
+            "where every note becomes inspiration,",
+            "a language of the heart that can inspire,",
+            "and heal each of us.",
         ]);
     }, []);
 
-
     return (
         <main className="space-y-20">
-            <section className="flex flex-col-reverse md:flex-row justify-between items-center lg:mb-60">
-                <div className="flex flex-col items-start text-center lg:text-left space-y-6">
+            <section className="opacity-0 transform transition-all duration-1000 flex flex-col-reverse md:flex-row justify-between items-center lg:mb-60"
+            ref={(el) => el && sectionsRefs.current.push(el as HTMLDivElement)}
+            >
+                <div className="flex flex-col items-start text-center lg:text-left space-y-8 md:space-y-10 lg:space-y-12 pl-60">
                     <h1
-                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-4xl md:text-5xl md:ml-40 lg:text-8xl font-semibold"
-                        style={{ height: "150px", lineHeight: "2" }}
+                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold"
                     >
                         Dmitriy Mikheev
                     </h1>
                     <div
-                        className="lg:ml-80 text-gray-700 h-auto w-full lg:w-auto overflow-visible relative font-Allura text-3xl sm:text-4xl lg:text-6xl  md:mr-10"
-                        style={{ lineHeight: "1.5" }}
+                        className="text-gray-700 overflow-visible font-Allura text-2xl sm:text-3xl lg:text-6xl pl-40"
+                        style={{ lineHeight: "1.5", height: "120px" }}
                         ref={typewriterRef1}
-                    >
-                        <span className="block lg:text-6xl md:text-3xl leading-[3rem] mb-6"
-                              style={{ display: "block"}}></span>
-                        <span className="line-spacing block lg:text-6xl md:text-3xl leading-[3rem] mb-6 ml-20"
-                              style={{ display: "block" }}></span>
-                        <span className="line-spacing block lg:text-6xl md:text-3xl leading-[4rem] mb-6 ml-20"
-                              style={{ display: "block"}}></span>
-                    </div>
+                    ></div>
                 </div>
-                <div className="w-full lg:w-auto md:w-auto flex justify-center lg:justify-start">
+                <div className="w-full lg:w-auto flex  justify-center">
                     <img
-                        src="/images/img_11.png"
+                        src="/images/ing_1.png"
                         alt="Opera Singer"
-                        className="w-[200px] sm:w-[300px] lg:w-[400px] rounded-lg"
+                        className="w-full md:w-[300px] lg:w-[440px]"
                     />
                 </div>
             </section>
 
-            <section className="flex flex-col md:flex-row lg:flex-row justify-between items-center">
-                <div className="w-full lg:w-1/4 flex justify-center relative lg:justify-end">
+            <section
+                ref={(el) => el && sectionsRefs.current.push(el as HTMLDivElement)}
+                className="opacity-0 transform transition-all duration-1000 flex flex-col md:flex-row md:justify-between items-center space-y-8 md:space-y-0 lg:space-y-12 lg:px-0">
+                <div className="flex justify-center md:justify-start">
                     <img
                         src="/images/img_2.png"
                         alt="Opera Performance"
-                        className=""
+                        className="w-[150px] sm:w-[250px] md:w-[300px] lg:w-[440px] translate-x-[-5%]"
                     />
                 </div>
-                <div className="flex flex-col relative items-start space-y-12 text-center lg:text-left w-1/2 ml-20 mr-40 lg:top-[-150px]">
-                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed text-4xl sm:text-6xl lg:text-8xl md:text-6xl font-bold">
+                <div
+                    className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-4 lg:space-y-8 w-full md:w-1/2 pb-40 mr-40 px-4 lg:px-0 relative -translate-y-8 md:-translate-y-16">
+                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed pl-40 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
                         A great gift
                     </h1>
                     <div
-                        className="text-gray-700 h-auto w-full overflow-visible relative font-Allura text:3xl md:text-4xl sm:3xl lg:text-5xl"
+                        className="text-gray-700 font-Allura text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
                         style={{ height: "120px", lineHeight: "1.5" }}
                         ref={typewriterRef2}
-                    >
-                        <span></span>
-                    </div>
+                    ></div>
                 </div>
             </section>
-            <section className="flex flex-col md:flex-row lg:flex-row justify-between items-center space-y-12 lg:space-y-0 lg:space-x-12 py-14 mt-40">
-                <div className="flex flex-col items-start space-y-6 mb-60">
+
+            <section
+                ref={(el) => el && sectionsRefs.current.push(el as HTMLDivElement)}
+                className="opacity-0 transform transition-all duration-1000 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 py-10 px-6 md:px-12 lg:px-20">
+                <div className="flex flex-col items-center md:items-start space-y-6 md:space-y-12 ml-80 pt-36 w-full md:w-2/3 lg:w-1/2">
                     <h1
-                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text:4xl sm:text-6xl lg:text-8xl font-semibold ml-80"
-                        style={{ lineHeight: "2" }}
+                        className="tracking-wider text-gray-700 font-Allura leading-relaxed text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-center md:text-left"
                     >
                         A bridge
                     </h1>
                     <div
-                        className="ml-60  text-gray-700 h-full w-auto overflow-visible relative font-Allura text:3xl sm:4xl lg:text-6xl"
+                        className="text-gray-700 font-Allura text-2xl md:text-3xl lg:text-5xl text-center md:text-left"
                         style={{ height: "120px", lineHeight: "1.5" }}
                         ref={typewriterRef3}
-                    >
-                        <span className="block text-6xl leading-[3rem] mb-6"></span>
-                        <span className="block text-6xl leading-[3rem] mb-6"></span>
-                        <span className="block text-6xl leading-[3rem] mb-6"></span>
-                        <span className="block text-6xl leading-[3rem] mb-6"></span>
-                    </div>
+                    ></div>
                 </div>
-                <div className="w-full lg:w-1/4 flex justify-center lg:justify-start">
+                <div className="w-full lg:w-1/3 flex justify-center">
                     <img
                         src="/images/img_3.png"
                         alt="Opera Singer"
-                        className=""
+                        className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[450px] ml-60 object-cover"
                     />
                 </div>
             </section>
-            <Sliders />
+            <section
+                ref={(el) => el && sectionsRefs.current.push(el as HTMLDivElement)}
+                className="opacity-0 transform transition-all duration-1000"
+            >
+                <Sliders />
+            </section>
         </main>
     );
 };

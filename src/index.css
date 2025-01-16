@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
     background: #ECE9E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -60,6 +61,78 @@ body {
     opacity: 1;
 }
 
+.opacity-0 {
+    opacity: 0;
+    transform: translateY(50px); /* Рухаємо вниз перед появою */
+}
+
+/* Анімоване з’явлення */
+.animate-fadeIn {
+    opacity: 1;
+    transform: translateY(0); /* Повертаємо до вихідного стану */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Анімація відкриття/закриття меню */
+.menu-container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-container.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.menu-item {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Стилі для кнопки меню */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.burger-line {
+    height: 3px;
+    width: 100%;
+    background: black;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-line.open:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.burger-line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-line.open:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
 
 @font-face {
     font-family: 'Allura' ;
@@ -91,6 +164,14 @@ body {
     50% {
         border-color: transparent;
     }
+}
+
+@media (max-width: 375px) {
+    header {
+        padding: 0 155px;
+
+    }
+
 }
 
 
