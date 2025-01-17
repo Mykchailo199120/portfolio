@@ -166,12 +166,5 @@ body {
     }
 }
 
-@media (max-width: 375px) {
-    header {
-        padding: 0 155px;
-
-    }
-
-}
 
 

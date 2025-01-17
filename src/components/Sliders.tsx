@@ -45,8 +45,11 @@ const Sliders: React.FC = () => {
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 3000 }}
                     spaceBetween={20}
-                    slidesPerView={2}
                     loop
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        640: { slidesPerView: 2 },
+                    }}
                     className="w-full h-[560px]"
                 >
                     {photos.map((photo, index) => (

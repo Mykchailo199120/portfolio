@@ -9,20 +9,20 @@ const Biography: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 mt-8 relative">
-            <h1 className="text-6xl absolute top-4 left-4 font-Allura mb-8">Biography</h1>
+            <h1 className="text-3xl text-gray-700 absolute top-4 left-4 font-Allura mb-8">Biography</h1>
 
             {isMainBiographyPage && (
                 <>
-                    <h2 className="text-5xl font-Allura font-semibold mb-4">Dmitriy Mikheev</h2>
+                    <h2 className="text-4xl text-gray-700 font-Allura font-semibold mb-4">Dmitriy Mikheev</h2>
                     <div className="w-60 h-0.5 bg-gray-700 mb-4"></div>
-                    <p className="text-4xl font-Allura text-center">
+                    <p className="text-2xl text-gray-700 font-Allura text-center">
                         Is an outstanding contemporary opera singer
                         with a unique voice that has captivated audiences worldwide.
                         Born in 1986 in the small yet picturesque town of Putyvl, Ukraine,
                         into a carpenter's family, Dmitriy grew up in an atmosphere of hard
                         work and simplicity.
                     </p>
-                    <div className="w-60 h-0.5 bg-gray-700 mt-4 "></div>
+
                 </>
             )}
 
