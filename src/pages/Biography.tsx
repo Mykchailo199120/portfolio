@@ -9,7 +9,7 @@ const Biography: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4 mt-8 relative">
-            <h1 className="text-3xl text-gray-700 absolute top-4 left-4 font-Allura mb-8">Biography</h1>
+            <h1 className="text-3xl text-gray-700 absolute top-2 left-2 font-Allura mb-8">Biography</h1>
 
             {isMainBiographyPage && (
                 <>
@@ -27,12 +27,12 @@ const Biography: React.FC = () => {
             )}
 
             {/* Тут рендериться дочірній маршрут (Page2, тощо) */}
-            <div className="w-full max-w-2xl">
+            <div className="w-full">
                 <Outlet />
             </div>
 
             {/* Навігація між сторінками */}
-            <nav className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+            <nav className="relative pt-40 ml-72 transform -translate-x-1/2 flex space-x-4">
                 <Link
                     to="/biography"
                     className="text-gray-500 hover:text-gray-500 px-4 py-2 border rounded hover:bg-gray-200"

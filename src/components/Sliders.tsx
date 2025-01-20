@@ -37,7 +37,7 @@ const Sliders: React.FC = () => {
         <section
             className="min-h-screen">
             {/* Слайдер із фото */}
-            <div className="py-12">
+            <div>
                 <h2 className="font-Allura text-6xl font-light text-center mb-6">Photo</h2>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
@@ -50,7 +50,7 @@ const Sliders: React.FC = () => {
                         0: { slidesPerView: 1 },
                         640: { slidesPerView: 2 },
                     }}
-                    className="w-full h-[560px]"
+                    className="w-full h-[450px]"
                 >
                     {photos.map((photo, index) => (
                         <SwiperSlide key={index} className="flex justify-center items-center h-full">
@@ -65,7 +65,7 @@ const Sliders: React.FC = () => {
             </div>
 
             {/* Слайдер із відео */}
-            <div className="py-12">
+            <div className="py-20">
                 <h2 className="font-Allura text-5xl font-light text-center mb-6">Video</h2>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
@@ -74,7 +74,7 @@ const Sliders: React.FC = () => {
                     spaceBetween={20}
                     slidesPerView={1}
                     loop
-                    className="max-w-6xl mx-auto"
+                    className="w-full"
                 >
                     {videos.map((video, index) => (
                         <SwiperSlide key={index}>

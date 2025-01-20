@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Sliders from "../components/Sliders.tsx";
 
+
 const MainPage: React.FC = () => {
     const sectionsRefs = useRef<HTMLDivElement[]>([]);
 
@@ -104,13 +105,13 @@ const MainPage: React.FC = () => {
                 className="opacity-0 transform transition-all duration-1000 flex flex-col-reverse md:flex-row justify-between items-center lg:mb-60"
                 ref={addSectionRef}
             >
-                <div className="flex flex-col lg:items-start text-center lg:text-left space-y-8 md:space-y-10 lg:space-y-12 lg:pl-60 mt-12">
-                    <h1 className="tracking-wider text-gray-700 font-Allura leading-relaxed text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold">
+                <div className="flex flex-col lg:items-start text-center lg:text-left space-y-4  md:space-y-10 lg:space-y-12 lg:pl-60 mt-4 ">
+                    <h1 className="tracking-wider text-gray-700 font-Allura  text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold">
                         Dmitriy Mikheev
                     </h1>
                     <div
-                        className="text-gray-700 overflow-visible font-Allura text-3xl sm:text-4xl lg:text-6xl lg:pl-40"
-                        style={{ lineHeight: "1.5", height: "120px" }}
+                        className="text-gray-700 overflow-visible font-Allura text-2xl sm:text-4xl lg:text-6xl lg:pl-40"
+                        style={{height: "120px"}}
                         ref={typewriterRef1}
                     ></div>
                 </div>
@@ -118,7 +119,7 @@ const MainPage: React.FC = () => {
                     <img
                         src="/images/ing_1.png"
                         alt="Opera Singer"
-                        className="w-full md:w-[300px] lg:w-[440px]"
+                        className="w-full mt-8 md:w-[300px] lg:w-[440px]"
                     />
                 </div>
             </section>
@@ -135,12 +136,12 @@ const MainPage: React.FC = () => {
                     />
                 </div>
                 <div className="flex flex-col items-center lg:items-start justify-center text-center lg:text-left  space-y-8 lg:space-y-4 w-full md:w-1/2 lg:mr-40 px-4 lg:px-0 relative lg:-translate-y-8 md:-translate-y-16">
-                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed lg:pl-40 text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
+                    <h1 className="font-Allura tracking-wider text-gray-700 leading-relaxed lg:pl-40 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
                         A great gift
                     </h1>
                     <div
-                        className="text-gray-700 font-Allura text-3xl sm:text-3xl md:text-4xl lg:text-5xl"
-                        style={{ height: "120px", lineHeight: "1.5" }}
+                        className="text-gray-700 font-Allura text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+                        style={{ height: "120px"}}
                         ref={typewriterRef2}
                     ></div>
                 </div>
@@ -151,12 +152,12 @@ const MainPage: React.FC = () => {
                 className="opacity-0  transform transition-all duration-1000 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 py-10 px-6 md:px-12 lg:px-20"
             >
                 <div className="flex flex-col items-center md:items-start space-y-4 lg:space-y-12 lg:ml-80 pt-80 w-full md:w-2/3 lg:w-1/2">
-                    <h1 className="tracking-wider text-gray-700 font-Allura leading-relaxed text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-center md:text-left">
+                    <h1 className="tracking-wider text-gray-700 font-Allura leading-relaxed text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-center md:text-left">
                         A bridge
                     </h1>
                     <div
-                        className="text-gray-700 font-Allura text-3xl md:text-3xl lg:text-5xl text-center md:text-left"
-                        style={{ height: "120px", lineHeight: "1.5" }}
+                        className="text-gray-700 font-Allura text-2xl md:text-3xl lg:text-5xl text-center md:text-left"
+                        style={{ height: "120px"}}
                         ref={typewriterRef3}
                     ></div>
                 </div>

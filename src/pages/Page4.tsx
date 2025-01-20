@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Page4: React.FC = () => (
-    <div>
+    <div className="mt-8">
         <h2 className="text-3xl text-center text-gray-700 font-Allura font-semibold mb-4">Vocal Style and Charisma</h2>
         <div className="w-60 mx-auto h-0.5 bg-gray-700 mb-4"></div>
         <p className="text-center text-2xl text-gray-700 font-Allura mb-4">

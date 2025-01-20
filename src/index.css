@@ -15,11 +15,14 @@ body {
     font-family: 'Dancing Script', Courier, monospace;
     font-size: 2.0rem;
     color: gray;
-    white-space: pre-wrap; /* Дозволяє розрив рядків */
+    white-space: pre-wrap;
+
+    /* Дозволяє розрив рядків */
 
     animation: blink 0.5s step-end infinite;
     display: inline-block; /* Фіксована позиція без зсувів */
     min-height: 4.5rem;
+
 }
 
 .line-spacing {

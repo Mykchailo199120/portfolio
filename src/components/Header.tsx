@@ -47,7 +47,7 @@ const Header = () => {
     }, [menuOpen, languageMenuOpen]);
 
     return (
-        <header className="fixed justify-between items-center w-full z-50">
+        <header className="fixed top-0 left-0 px-2 justify-between items-center bg-opacity-50 bg-gray-200 shadow-sm w-full z-50">
             <div className="flex items-center justify-between">
                 {/* Ліва частина - Бутерброд меню */}
                 <div className="flex items-center space-x-4">
@@ -114,9 +114,9 @@ const Header = () => {
                 </div>
 
                 {/* Центр - Соціальні мережі */}
-                <div className="flex space-x-4">
+                <div className="flex space-x-5 ml-4">
                     <a
-                        href="https://www.facebook.com"
+                        href="https://www.facebook.com/people/Dmitriy-Mikheev/61569885217434/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-black hover:text-gray-500"
@@ -124,7 +124,7 @@ const Header = () => {
                         <FaFacebook size={28} />
                     </a>
                     <a
-                        href="https://www.instagram.com"
+                        href="https://www.instagram.com/dmitriy.mikheev.official/?igsh=MWM5MW51eG82Z2xjdA%3D%3D&utm_source=qr#"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-black hover:text-gray-500"
@@ -132,7 +132,7 @@ const Header = () => {
                         <FaInstagram size={28} />
                     </a>
                     <a
-                        href="https://www.youtube.com"
+                        href="https://www.youtube.com/@%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%D0%9C%D0%B8%D1%85%D0%B5%D0%B5%D0%B2-%D0%B17%D1%8D"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-black hover:text-gray-500"
@@ -144,25 +144,32 @@ const Header = () => {
                 {/* Права частина - Мови */}
                 <div className="relative" ref={languageMenuRef}>
                     <div className="cursor-pointer" onClick={toggleLanguageMenu}>
-                        <span className="text-3xl font-Allura">{language}</span>
+                        <span className="text-2xl font-Allura">Language</span>
                     </div>
 
                     {languageMenuOpen && (
                         <div className="absolute right-0 mt-2 w-30 bg-gray-300 shadow-lg rounded-lg animate__animated animate__fadeIn">
                             <div
-                                className="font-Allura text-2xl px-2 py-2 hover:bg-gray-200"
+                                className={`font-Allura text-2xl px-2 py-2 hover:bg-gray-200 ${
+                                language === "En" ? "font-Allura text-gray-700" : ""
+                                }`
+}
                                 onClick={() => handleLanguageChange("En")}
                             >
                                 En
                             </div>
                             <div
-                                className="font-Allura text-2xl px-2 py-2 hover:bg-gray-200"
+                                className={`font-Allura text-2xl px-2 py-2 hover:bg-gray-200 ${
+                                    language === "Ru" ? "font-Allura text-gray-700" : ""
+                                }`}
                                 onClick={() => handleLanguageChange("Ru")}
                             >
                                 Ru
                             </div>
                             <div
-                                className="font-Allura text-2xl px-2 py-2 hover:bg-gray-200"
+                                className={`font-Allura text-2xl px-2 py-2 hover:bg-gray-200 ${
+                                    language === "Ned" ? "font-Allura text-gray-700" : ""
+                                }`}
                                 onClick={() => handleLanguageChange("Ned")}
                             >
                                 Ned
